@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "691801626367",
+    "project_id": "kreativekorner-35b76",
+    "storage_bucket": "kreativekorner-35b76.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:691801626367:android:a2526234227b59dfb71eca",
+        "android_client_info": {
+          "package_name": "com.lbnkosi.kreativekorner"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "691801626367-fs0mj5raq4o6unsk5c9emna0rj78h046.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.lbnkosi.kreativekorner",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "691801626367-sk92i4cjn13m34np20flottuvnj0j7bp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCerWwTFNU7Njq9FCBFQshtYIcEnvY0CVs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "691801626367-sk92i4cjn13m34np20flottuvnj0j7bp.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "691801626367-8degltqp0ifst053l2of9163rjuum33t.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.lbnkosi.kreativekorner"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
