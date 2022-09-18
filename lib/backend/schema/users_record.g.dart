@@ -103,6 +103,41 @@ class _$UsersRecordSerializer implements StructuredSerializer<UsersRecord> {
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
+    value = object.displayName;
+    if (value != null) {
+      result
+        ..add('display_name')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.photoUrl;
+    if (value != null) {
+      result
+        ..add('photo_url')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.uid;
+    if (value != null) {
+      result
+        ..add('uid')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.createdTime;
+    if (value != null) {
+      result
+        ..add('created_time')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(DateTime)));
+    }
+    value = object.phoneNumber;
+    if (value != null) {
+      result
+        ..add('phone_number')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
     value = object.ffRef;
     if (value != null) {
       result
@@ -173,6 +208,26 @@ class _$UsersRecordSerializer implements StructuredSerializer<UsersRecord> {
           result.paymentMethod = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
+        case 'display_name':
+          result.displayName = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'photo_url':
+          result.photoUrl = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'uid':
+          result.uid = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'created_time':
+          result.createdTime = serializers.deserialize(value,
+              specifiedType: const FullType(DateTime)) as DateTime?;
+          break;
+        case 'phone_number':
+          result.phoneNumber = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
         case 'Document__Reference__Field':
           result.ffRef = serializers.deserialize(value,
               specifiedType: const FullType(DocumentReference, const [
@@ -212,6 +267,16 @@ class _$UsersRecord extends UsersRecord {
   @override
   final String? paymentMethod;
   @override
+  final String? displayName;
+  @override
+  final String? photoUrl;
+  @override
+  final String? uid;
+  @override
+  final DateTime? createdTime;
+  @override
+  final String? phoneNumber;
+  @override
   final DocumentReference<Object?>? ffRef;
 
   factory _$UsersRecord([void Function(UsersRecordBuilder)? updates]) =>
@@ -230,6 +295,11 @@ class _$UsersRecord extends UsersRecord {
       this.walletId,
       this.customerId,
       this.paymentMethod,
+      this.displayName,
+      this.photoUrl,
+      this.uid,
+      this.createdTime,
+      this.phoneNumber,
       this.ffRef})
       : super._();
 
@@ -256,6 +326,11 @@ class _$UsersRecord extends UsersRecord {
         walletId == other.walletId &&
         customerId == other.customerId &&
         paymentMethod == other.paymentMethod &&
+        displayName == other.displayName &&
+        photoUrl == other.photoUrl &&
+        uid == other.uid &&
+        createdTime == other.createdTime &&
+        phoneNumber == other.phoneNumber &&
         ffRef == other.ffRef;
   }
 
@@ -272,18 +347,34 @@ class _$UsersRecord extends UsersRecord {
                                     $jc(
                                         $jc(
                                             $jc(
-                                                $jc($jc(0, name.hashCode),
-                                                    surname.hashCode),
-                                                email.hashCode),
-                                            phone.hashCode),
-                                        country.hashCode),
-                                    userType.hashCode),
-                                points.hashCode),
-                            refId.hashCode),
-                        walletAmount.hashCode),
-                    walletId.hashCode),
-                customerId.hashCode),
-            paymentMethod.hashCode),
+                                                $jc(
+                                                    $jc(
+                                                        $jc(
+                                                            $jc(
+                                                                $jc(
+                                                                    $jc(
+                                                                        $jc(
+                                                                            0,
+                                                                            name
+                                                                                .hashCode),
+                                                                        surname
+                                                                            .hashCode),
+                                                                    email
+                                                                        .hashCode),
+                                                                phone.hashCode),
+                                                            country.hashCode),
+                                                        userType.hashCode),
+                                                    points.hashCode),
+                                                refId.hashCode),
+                                            walletAmount.hashCode),
+                                        walletId.hashCode),
+                                    customerId.hashCode),
+                                paymentMethod.hashCode),
+                            displayName.hashCode),
+                        photoUrl.hashCode),
+                    uid.hashCode),
+                createdTime.hashCode),
+            phoneNumber.hashCode),
         ffRef.hashCode));
   }
 
@@ -302,6 +393,11 @@ class _$UsersRecord extends UsersRecord {
           ..add('walletId', walletId)
           ..add('customerId', customerId)
           ..add('paymentMethod', paymentMethod)
+          ..add('displayName', displayName)
+          ..add('photoUrl', photoUrl)
+          ..add('uid', uid)
+          ..add('createdTime', createdTime)
+          ..add('phoneNumber', phoneNumber)
           ..add('ffRef', ffRef))
         .toString();
   }
@@ -359,6 +455,26 @@ class UsersRecordBuilder implements Builder<UsersRecord, UsersRecordBuilder> {
   set paymentMethod(String? paymentMethod) =>
       _$this._paymentMethod = paymentMethod;
 
+  String? _displayName;
+  String? get displayName => _$this._displayName;
+  set displayName(String? displayName) => _$this._displayName = displayName;
+
+  String? _photoUrl;
+  String? get photoUrl => _$this._photoUrl;
+  set photoUrl(String? photoUrl) => _$this._photoUrl = photoUrl;
+
+  String? _uid;
+  String? get uid => _$this._uid;
+  set uid(String? uid) => _$this._uid = uid;
+
+  DateTime? _createdTime;
+  DateTime? get createdTime => _$this._createdTime;
+  set createdTime(DateTime? createdTime) => _$this._createdTime = createdTime;
+
+  String? _phoneNumber;
+  String? get phoneNumber => _$this._phoneNumber;
+  set phoneNumber(String? phoneNumber) => _$this._phoneNumber = phoneNumber;
+
   DocumentReference<Object?>? _ffRef;
   DocumentReference<Object?>? get ffRef => _$this._ffRef;
   set ffRef(DocumentReference<Object?>? ffRef) => _$this._ffRef = ffRef;
@@ -382,6 +498,11 @@ class UsersRecordBuilder implements Builder<UsersRecord, UsersRecordBuilder> {
       _walletId = $v.walletId;
       _customerId = $v.customerId;
       _paymentMethod = $v.paymentMethod;
+      _displayName = $v.displayName;
+      _photoUrl = $v.photoUrl;
+      _uid = $v.uid;
+      _createdTime = $v.createdTime;
+      _phoneNumber = $v.phoneNumber;
       _ffRef = $v.ffRef;
       _$v = null;
     }
@@ -417,6 +538,11 @@ class UsersRecordBuilder implements Builder<UsersRecord, UsersRecordBuilder> {
             walletId: walletId,
             customerId: customerId,
             paymentMethod: paymentMethod,
+            displayName: displayName,
+            photoUrl: photoUrl,
+            uid: uid,
+            createdTime: createdTime,
+            phoneNumber: phoneNumber,
             ffRef: ffRef);
     replace(_$result);
     return _$result;

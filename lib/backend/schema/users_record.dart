@@ -39,6 +39,20 @@ abstract class UsersRecord implements Built<UsersRecord, UsersRecordBuilder> {
   @BuiltValueField(wireName: 'payment_method')
   String? get paymentMethod;
 
+  @BuiltValueField(wireName: 'display_name')
+  String? get displayName;
+
+  @BuiltValueField(wireName: 'photo_url')
+  String? get photoUrl;
+
+  String? get uid;
+
+  @BuiltValueField(wireName: 'created_time')
+  DateTime? get createdTime;
+
+  @BuiltValueField(wireName: 'phone_number')
+  String? get phoneNumber;
+
   @BuiltValueField(wireName: kDocumentReferenceField)
   DocumentReference? get ffRef;
   DocumentReference get reference => ffRef!;
@@ -55,7 +69,11 @@ abstract class UsersRecord implements Built<UsersRecord, UsersRecordBuilder> {
     ..walletAmount = ''
     ..walletId = ''
     ..customerId = ''
-    ..paymentMethod = '';
+    ..paymentMethod = ''
+    ..displayName = ''
+    ..photoUrl = ''
+    ..uid = ''
+    ..phoneNumber = '';
 
   static CollectionReference get collection =>
       FirebaseFirestore.instance.collection('users');
@@ -82,6 +100,12 @@ abstract class UsersRecord implements Built<UsersRecord, UsersRecordBuilder> {
           ..walletId = snapshot.data['wallet_id']
           ..customerId = snapshot.data['customer_id']
           ..paymentMethod = snapshot.data['payment_method']
+          ..displayName = snapshot.data['display_name']
+          ..photoUrl = snapshot.data['photo_url']
+          ..uid = snapshot.data['uid']
+          ..createdTime = safeGet(() => DateTime.fromMillisecondsSinceEpoch(
+              snapshot.data['created_time']))
+          ..phoneNumber = snapshot.data['phone_number']
           ..ffRef = UsersRecord.collection.doc(snapshot.objectID),
       );
 
@@ -123,6 +147,11 @@ Map<String, dynamic> createUsersRecordData({
   String? walletId,
   String? customerId,
   String? paymentMethod,
+  String? displayName,
+  String? photoUrl,
+  String? uid,
+  DateTime? createdTime,
+  String? phoneNumber,
 }) {
   final firestoreData = serializers.toFirestore(
     UsersRecord.serializer,
@@ -139,7 +168,12 @@ Map<String, dynamic> createUsersRecordData({
         ..walletAmount = walletAmount
         ..walletId = walletId
         ..customerId = customerId
-        ..paymentMethod = paymentMethod,
+        ..paymentMethod = paymentMethod
+        ..displayName = displayName
+        ..photoUrl = photoUrl
+        ..uid = uid
+        ..createdTime = createdTime
+        ..phoneNumber = phoneNumber,
     ),
   );
 

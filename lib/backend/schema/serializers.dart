@@ -12,6 +12,19 @@ import 'loan_plans_record.dart';
 import 'income_protection_plans_record.dart';
 import 'chat_record.dart';
 import 'messages_record.dart';
+import 'apartments_record.dart';
+import 'checkout_record.dart';
+import 'my_loans_record.dart';
+import 'chats_record.dart';
+import 'chat_messages_record.dart';
+import 'my_shares_record.dart';
+import 'rapyd_rewards_record.dart';
+import 'rewards_record.dart';
+import 'issued_rewards_record.dart';
+import 'rapyd_embed_record.dart';
+import 'products_record.dart';
+import 'rapyd_embed_services_record.dart';
+import 'rapyd_embed_checkout_record.dart';
 
 import 'index.dart';
 
@@ -35,6 +48,19 @@ const kDocumentReferenceField = 'Document__Reference__Field';
   IncomeProtectionPlansRecord,
   ChatRecord,
   MessagesRecord,
+  ApartmentsRecord,
+  CheckoutRecord,
+  MyLoansRecord,
+  ChatsRecord,
+  ChatMessagesRecord,
+  MySharesRecord,
+  RapydRewardsRecord,
+  RewardsRecord,
+  IssuedRewardsRecord,
+  RapydEmbedRecord,
+  ProductsRecord,
+  RapydEmbedServicesRecord,
+  RapydEmbedCheckoutRecord,
 ])
 final Serializers serializers = (_$serializers.toBuilder()
       ..add(DocumentReferenceSerializer())

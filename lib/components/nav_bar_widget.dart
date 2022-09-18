@@ -2,6 +2,7 @@ import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class NavBarWidget extends StatefulWidget {
@@ -61,7 +62,7 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(30, 0, 0, 0),
                           child: InkWell(
                             onTap: () async {
-                              context.pushNamed('MyWallets');
+                              context.pushNamed('RapydRewardsPage');
                             },
                             child: Text(
                               'My Wallets',
@@ -143,14 +144,20 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                         ),
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(30, 0, 0, 0),
-                          child: Text(
-                            'Transfer',
-                            style:
-                                FlutterFlowTheme.of(context).bodyText1.override(
-                                      fontFamily: 'Montserrat',
-                                      color: FlutterFlowTheme.of(context).black,
-                                      fontSize: 14,
-                                    ),
+                          child: InkWell(
+                            onTap: () async {
+                              context.pushNamed('RapydSharesPage');
+                            },
+                            child: Text(
+                              'Transfer',
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyText1
+                                  .override(
+                                    fontFamily: 'Montserrat',
+                                    color: FlutterFlowTheme.of(context).black,
+                                    fontSize: 14,
+                                  ),
+                            ),
                           ),
                         ),
                         Padding(

@@ -34,6 +34,8 @@ class FFAppState {
     _liked = _value;
     prefs.setBool('ff_liked', _value);
   }
+
+  String checkoutId = '';
 }
 
 LatLng? _latLngFromString(String? val) {

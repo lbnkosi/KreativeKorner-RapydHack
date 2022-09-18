@@ -8,6 +8,7 @@ import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -60,8 +61,9 @@ class _PaymentCardsPageWidgetState extends State<PaymentCardsPageWidget> {
             child: SizedBox(
               width: 50,
               height: 50,
-              child: CircularProgressIndicator(
+              child: SpinKitPulse(
                 color: FlutterFlowTheme.of(context).primaryColor,
+                size: 50,
               ),
             ),
           );
@@ -858,10 +860,11 @@ class _PaymentCardsPageWidgetState extends State<PaymentCardsPageWidget> {
                                                               width: 50,
                                                               height: 50,
                                                               child:
-                                                                  CircularProgressIndicator(
+                                                                  SpinKitPulse(
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryColor,
+                                                                size: 50,
                                                               ),
                                                             ),
                                                           );

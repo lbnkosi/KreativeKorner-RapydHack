@@ -49,9 +49,13 @@ class AccessPointCall {
     bool? hasPayout,
     String? collectCardId = '',
     String? currentlyViewing = '',
+    String? collectionName = '',
+    String? checkoutType = '',
   }) {
     final body = '''
 {
+  "checkout_type": "${checkoutType}",
+  "collection_name": "${collectionName}",
   "currently_viewing": "${currentlyViewing}",
   "collect_card_id": "${collectCardId}",
   "has_payout": ${hasPayout},

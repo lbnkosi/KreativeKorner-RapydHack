@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:go_router/go_router.dart';
 import 'package:page_transition/page_transition.dart';
 import '../flutter_flow_theme.dart';
@@ -176,13 +177,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
-              name: 'ChatPage',
-              path: 'chatPage',
-              builder: (context, params) => ChatPageWidget(
-                reciever: params.getParam('reciever', ParamType.String),
-              ),
-            ),
-            FFRoute(
               name: 'NewsFeedPage',
               path: 'newsFeedPage',
               builder: (context, params) => NewsFeedPageWidget(),
@@ -205,12 +199,65 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             FFRoute(
               name: 'PropertyDetailsPage',
               path: 'propertyDetailsPage',
-              builder: (context, params) => PropertyDetailsPageWidget(),
+              builder: (context, params) => PropertyDetailsPageWidget(
+                id: params.getParam('id', ParamType.String),
+                checkoutId: params.getParam('checkoutId', ParamType.String),
+              ),
             ),
             FFRoute(
               name: 'PropertiesLists',
               path: 'propertiesLists',
               builder: (context, params) => PropertiesListsWidget(),
+            ),
+            FFRoute(
+              name: 'CheckoutPage',
+              path: 'checkoutPage',
+              builder: (context, params) => CheckoutPageWidget(
+                checkoutId: params.getParam('checkoutId', ParamType.String),
+              ),
+            ),
+            FFRoute(
+              name: 'BorrowingManagementPage',
+              path: 'borrowingManagementPage',
+              builder: (context, params) => BorrowingManagementPageWidget(),
+            ),
+            FFRoute(
+              name: 'RapydSharesPage',
+              path: 'rapydSharesPage',
+              builder: (context, params) => RapydSharesPageWidget(),
+            ),
+            FFRoute(
+              name: 'SharesList',
+              path: 'sharesList',
+              builder: (context, params) => SharesListWidget(),
+            ),
+            FFRoute(
+              name: 'SharesDetailsPage',
+              path: 'sharesDetailsPage',
+              builder: (context, params) => SharesDetailsPageWidget(
+                id: params.getParam('id', ParamType.String),
+                checkoutId: params.getParam('checkoutId', ParamType.String),
+              ),
+            ),
+            FFRoute(
+              name: 'RapydRewardsPage',
+              path: 'rapydRewardsPage',
+              builder: (context, params) => RapydRewardsPageWidget(),
+            ),
+            FFRoute(
+              name: 'HomePageV3',
+              path: 'homePageV3',
+              builder: (context, params) => HomePageV3Widget(),
+            ),
+            FFRoute(
+              name: 'IssueRewardsPage',
+              path: 'issueRewardsPage',
+              builder: (context, params) => IssueRewardsPageWidget(),
+            ),
+            FFRoute(
+              name: 'RapydEmbedPage',
+              path: 'rapydEmbedPage',
+              builder: (context, params) => RapydEmbedPageWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ).toRoute(appStateNotifier),
@@ -386,8 +433,9 @@ class FFRoute {
                   child: SizedBox(
                     width: 50,
                     height: 50,
-                    child: CircularProgressIndicator(
+                    child: SpinKitPulse(
                       color: FlutterFlowTheme.of(context).primaryColor,
+                      size: 50,
                     ),
                   ),
                 )

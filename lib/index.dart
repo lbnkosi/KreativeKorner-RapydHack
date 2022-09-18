@@ -30,7 +30,6 @@ export 'income_insurance_plans/income_insurance_plans_widget.dart'
     show IncomeInsurancePlansWidget;
 export 'income_protection_apply_page/income_protection_apply_page_widget.dart'
     show IncomeProtectionApplyPageWidget;
-export 'chat_page/chat_page_widget.dart' show ChatPageWidget;
 export 'news_feed_page/news_feed_page_widget.dart' show NewsFeedPageWidget;
 export 'create_post_page/create_post_page_widget.dart'
     show CreatePostPageWidget;
@@ -40,3 +39,18 @@ export 'property_details_page/property_details_page_widget.dart'
     show PropertyDetailsPageWidget;
 export 'properties_lists/properties_lists_widget.dart'
     show PropertiesListsWidget;
+export 'checkout_page/checkout_page_widget.dart' show CheckoutPageWidget;
+export 'borrowing_management_page/borrowing_management_page_widget.dart'
+    show BorrowingManagementPageWidget;
+export 'rapyd_shares_page/rapyd_shares_page_widget.dart'
+    show RapydSharesPageWidget;
+export 'shares_list/shares_list_widget.dart' show SharesListWidget;
+export 'shares_details_page/shares_details_page_widget.dart'
+    show SharesDetailsPageWidget;
+export 'rapyd_rewards_page/rapyd_rewards_page_widget.dart'
+    show RapydRewardsPageWidget;
+export 'home_page_v3/home_page_v3_widget.dart' show HomePageV3Widget;
+export 'issue_rewards_page/issue_rewards_page_widget.dart'
+    show IssueRewardsPageWidget;
+export 'rapyd_embed_page/rapyd_embed_page_widget.dart'
+    show RapydEmbedPageWidget;
